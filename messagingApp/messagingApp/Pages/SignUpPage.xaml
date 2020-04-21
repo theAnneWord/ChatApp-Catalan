@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="messagingApp.SignUpPage">
+    <ContentPage.Content>
+        <StackLayout Grid.Row="2" Grid.Column="1">
+            <Label Text="Sign Up" HorizontalOptions="Start" Margin="5,0,5,0" TextColor="Black" FontAttributes="Bold"/>
+            <Entry x:Name="Name" Placeholder="Enter Name" HorizontalOptions="FillAndExpand" Margin="5,0,5,0" Keyboard="Email" ReturnType="Next"/>
+            <Entry x:Name="Email" Placeholder="Enter Email" HorizontalOptions="FillAndExpand" Margin="5,0,5,0" Keyboard="Text" IsPassword="True" ReturnType="Done"/>
+            <Grid>
+                <Entry x:Name="Password" Placeholder="Enter Password"  Keyboard="Text" ReturnType="Next" Grid.Column="0" Grid.ColumnSpan="2"/>
+                <Label x:Name="show1" Text="Show" Grid.Column="1" HorizontalOptions="End" VerticalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ShowPass" NumberOfTapsRequired="1" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+            <Grid>
+                <Entry x:Name="Confirm" Placeholder="Confirm Password"  Keyboard="Text" ReturnType="Next" Grid.Column="0" Grid.ColumnSpan="2"/>
+                <Label x:Name="show2" Text="Show" Grid.Column="1" HorizontalOptions="End" VerticalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ShowConfirm" NumberOfTapsRequired="1" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+            <Button x:Name="signUp" Text="Create Account" Clicked="Create"/>
+            <Grid>
+                <Label Text="OR" VerticalOptions="Center" Grid.Column="1"/>
+            </Grid>
+            <Grid>
+                <Image Source="FacebookSignUp.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="createSocial"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+            <Grid>
+                <Image Source="GoogleSignUp.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="createSocial"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
